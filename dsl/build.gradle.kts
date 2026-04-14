@@ -1,10 +1,9 @@
 plugins {
     kotlin("jvm")
     kotlin("plugin.serialization") version "2.3.20"
+    id("com.vanniktech.maven.publish")
 }
 
-group = "dev.ruan625br.hytale.item.safe"
-version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()

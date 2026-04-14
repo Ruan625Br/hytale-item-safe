@@ -2,9 +2,6 @@ plugins {
     kotlin("jvm")
 }
 
-group = "dev.ruan625br.hytale.item.safe"
-version = "1.0-SNAPSHOT"
-
 repositories {
     mavenCentral()
 }
