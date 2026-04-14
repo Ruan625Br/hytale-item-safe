@@ -77,8 +77,10 @@ class HytaleItemProcessor(
     private fun generateAssetsObject() {
         val resourcesDirPath = options["hytale.common.dir"]
             ?: run { logger.warn("[HytaleKSP] Opção 'hytale.common.dir' não configurada — Assets.kt não gerado"); return }
+        val serverResourcesDirPath = options["hytale.server.dir"]
 
         val resourcesDir = File(resourcesDirPath)
+        val serverResourcesDir = serverResourcesDirPath?.let { File(it) }
         if (!resourcesDir.exists()) {
             logger.warn("[HytaleKSP] Diretório não encontrado: $resourcesDirPath")
             return
@@ -95,9 +97,30 @@ class HytaleItemProcessor(
             w.appendLine("package io.github.ruan625br.hytale.item.safe.generated")
             w.appendLine()
             w.appendLine("object Assets {")
+
             buildAssetsNode(resourcesDir, resourcesDir, w, indent = 1)
+            buildServerAssetsNode(serverResourcesDir, serverResourcesDir, w, indent = 1)
+
             w.appendLine("}")
         }
+    }
+
+    private fun buildServerAssetsNode(
+        dir: File?,
+        rootDir: File?,
+        writer: BufferedWriter,
+        indent : Int
+    ) {
+        val pad = "    ".repeat(indent)
+
+        writer.appendLine("${pad}object Server {")
+
+        if (dir != null && rootDir != null) {
+            buildAssetsNode(dir, rootDir, writer, indent + 1)
+        }
+
+        writer.appendLine("$pad}")
+
     }
 
 

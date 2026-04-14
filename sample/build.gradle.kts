@@ -37,5 +37,7 @@ hytaleAssets {
 ksp {
     arg("hytale.common.dir",
         layout.projectDirectory.dir("src/main/resources/Common").asFile.absolutePath)
+    arg("hytale.server.dir",
+        layout.projectDirectory.dir("src/main/resources/Server").asFile.absolutePath)
 
 }

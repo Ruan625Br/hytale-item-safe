@@ -18,7 +18,7 @@ class HytaleRunner(
         )
 
         file.bufferedWriter().use { w ->
-            w.appendLine("// AUTO-GERADO PELO KSP — não edite")
+            w.appendLine("// AUTO-GENERATED — do not edit manually")
             w.appendLine("package io.github.ruan625br.hytale.item.safe.generated")
             w.appendLine()
             w.appendLine("import kotlinx.serialization.encodeToString")
