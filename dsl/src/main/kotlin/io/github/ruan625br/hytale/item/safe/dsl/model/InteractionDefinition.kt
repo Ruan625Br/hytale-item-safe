@@ -1,5 +1,6 @@
 package io.github.ruan625br.hytale.item.safe.dsl.model
 
+import io.github.ruan625br.hytale.item.safe.dsl.definition.ResourceDefinition
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
@@ -74,4 +75,4 @@ data class InteractionDefinition(
     @SerialName("CooldownKey") val cooldownKey: String? = null,
 
     @SerialName("Interactions") val interactions: List<String>? = null,
-)
+): ResourceDefinition

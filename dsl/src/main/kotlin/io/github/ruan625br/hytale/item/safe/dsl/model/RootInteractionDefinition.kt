@@ -1,5 +1,6 @@
 package io.github.ruan625br.hytale.item.safe.dsl.model
 
+import io.github.ruan625br.hytale.item.safe.dsl.definition.ResourceDefinition
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
@@ -10,4 +11,4 @@ data class RootInteractionDefinition(
     @SerialName("InteractionType") val interactionType: String? = null,
     @SerialName("Cooldown") val cooldown: CooldownConfig? = null,
     @SerialName("CancelOnOtherClick") val cancelOnOtherClick: Boolean? = null,
-)
+): ResourceDefinition
