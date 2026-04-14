@@ -1,9 +1,9 @@
 package sample
 
-import dev.ruan625br.hytale.item.safe.generated.Assets
-import dev.ruan625br.hytale.item.safe.annotations.HytaleItem
-import dev.ruan625br.hytale.item.safe.dsl.builders.hytaleItem
-import dev.ruan625br.hytale.item.safe.dsl.registry.ResourceRegistry
+import io.github.ruan625br.hytale.item.safe.generated.Assets
+import io.github.ruan625br.hytale.item.safe.annotations.HytaleItem
+import io.github.ruan625br.hytale.item.safe.dsl.builders.hytaleItem
+import io.github.ruan625br.hytale.item.safe.dsl.registry.ResourceRegistry
 
 @HytaleItem(id = "My_New_block", "Blocks")
 object MyNewBlock : ResourceRegistry {

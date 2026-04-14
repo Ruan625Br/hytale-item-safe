@@ -7,10 +7,10 @@ import com.google.devtools.ksp.processing.Resolver
 import com.google.devtools.ksp.processing.SymbolProcessor
 import com.google.devtools.ksp.symbol.KSAnnotated
 import com.google.devtools.ksp.symbol.KSClassDeclaration
-import dev.ruan625br.hytale.item.safe.annotations.HytaleInteraction
-import dev.ruan625br.hytale.item.safe.annotations.HytaleItem
-import dev.ruan625br.hytale.item.safe.annotations.HytaleModel
-import dev.ruan625br.hytale.item.safe.annotations.HytaleRootInteraction
+import io.github.ruan625br.hytale.item.safe.annotations.HytaleInteraction
+import io.github.ruan625br.hytale.item.safe.annotations.HytaleItem
+import io.github.ruan625br.hytale.item.safe.annotations.HytaleModel
+import io.github.ruan625br.hytale.item.safe.annotations.HytaleRootInteraction
 import ksp.runner.HytaleRunner
 import java.io.BufferedWriter
 import java.io.File
@@ -86,13 +86,13 @@ class HytaleItemProcessor(
 
         val file = codeGenerator.createNewFile(
             dependencies = Dependencies(aggregating = true),
-            packageName = "dev.ruan625br.hytale.item.safe.generated",
+            packageName = "io.github.ruan625br.hytale.item.safe.generated",
             fileName = "Assets"
         )
 
         file.bufferedWriter().use { w ->
             w.appendLine("// AUTO-GENERATED — do not edit manually")
-            w.appendLine("package dev.ruan625br.hytale.item.safe.generated")
+            w.appendLine("package io.github.ruan625br.hytale.item.safe.generated")
             w.appendLine()
             w.appendLine("object Assets {")
             buildAssetsNode(resourcesDir, resourcesDir, w, indent = 1)

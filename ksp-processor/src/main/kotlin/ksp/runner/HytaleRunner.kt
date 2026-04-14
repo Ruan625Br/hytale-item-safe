@@ -13,13 +13,13 @@ class HytaleRunner(
     fun generateRunner(items: List<AnnotatedItem>) {
         val file = codeGenerator.createNewFile(
             dependencies = Dependencies(aggregating = true),
-            packageName = "dev.ruan625br.hytale.item.safe.generated",
+            packageName = "io.github.ruan625br.hytale.item.safe.generated",
             fileName = "HytaleRunner"
         )
 
         file.bufferedWriter().use { w ->
             w.appendLine("// AUTO-GERADO PELO KSP — não edite")
-            w.appendLine("package dev.ruan625br.hytale.item.safe.generated")
+            w.appendLine("package io.github.ruan625br.hytale.item.safe.generated")
             w.appendLine()
             w.appendLine("import kotlinx.serialization.encodeToString")
             w.appendLine("import kotlinx.serialization.json.Json")
